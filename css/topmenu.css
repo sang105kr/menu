@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* * { outline: 1px solid red;} */
+body{
+  margin: 0px;
+}
+a {
+  text-decoration: none;
+  color:#fff;
+}
+ul{
+  list-style-type: none;
+  padding-left: 0px;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: #4527a0;
+}
+.navbar .navbar-logo,
+.navbar .navbar-menu,
+.navbar .navbar-sns{
+  display: flex;
+}
+/* logo */
+.navbar .navbar-logo li:nth-child(1){
+  margin-right:5px;
+  color:salmon;
+  font-size: 1.5rem;
+}
+.navbar .navbar-logo li:nth-child(1) i{
+  vertical-align: top;
+}
+
+/* GNB 메뉴 */
+.navbar .navbar-menu li {
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.navbar .navbar-menu li:hover {
+  background-color: #7953d2;
+  transition: background-color 1s ease;
+  font-weight: bold;
+}
+.navbar .navbar-menu li a:hover{
+  text-decoration: underline;
+}  
+
+/* sns */
+.navbar .navbar-sns li {
+  margin-left:5px;
+}
+
+.navbar #hamburger{
+  display: none;
+  position:absolute;
+  top:20px; right:20px;
+}
+@media screen and (max-width:767px){
+  .navbar,
+  .navbar .navbar-menu {
+    flex-direction: column;
+  }
+  .navbar #hamburger{
+    display: block;
+  }
+  .navbar .navbar-menu,
+  .navbar .navbar-sns{
+    display: none;
+  }
+  .navbar .navbar-logo{
+    align-self: flex-start;
+  }
+  .navbar .navbar-logo.active{
+    align-self: center;
+  }
+  .navbar .navbar-menu.active,
+  .navbar .navbar-sns.active{
+    display: flex;
+  }   
+
+  .navbar .navbar-menu {
+    width:100%;
+    text-align: center;
+    border-top: 0.5px solid  #ccc;
+    border-bottom: 0.5px solid #ccc;
+  }         
+}
